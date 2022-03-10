@@ -51,7 +51,7 @@ namespace Collection_Funds
             // 029337524
         public static Boolean getConnection()
         {
-            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.1.101:8082/api/session?terminalNumber=2802");
+            HttpWebRequest myHttpWebRequest = WebRequest.Create("http://192.168.1.101:8082/api/session?terminalNumber=2802") as HttpWebRequest;
             HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
             return (myHttpWebResponse.StatusCode == HttpStatusCode.OK);
         }
